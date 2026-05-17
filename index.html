@@ -174,142 +174,9 @@
     color: var(--text);
     margin-bottom: 8px;
   }
-  .section-desc {
-    font-size: 15px;
-    color: var(--text-muted);
-    max-width: 640px;
-    margin-bottom: 36px;
-  }
+  /* section-desc defined above */
 
-  /* ── TASK CARDS ─────────────────────────── */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  .task-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-    text-decoration: none;
-    color: inherit;
-  }
-  .task-card:hover {
-    box-shadow: var(--card-shadow);
-    border-color: #b5ddd5;
-    transform: translateY(-2px);
-  }
-  .card-type-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: var(--accent-light);
-    border-radius: 4px;
-    padding: 3px 9px;
-    width: fit-content;
-  }
-  .card-title {
-    font-family: 'Lora', serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.3;
-  }
-  .card-acronym {
-    font-size: 13px;
-    color: var(--text-subtle);
-    font-weight: 400;
-  }
-  .card-desc {
-    font-size: 14px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    flex: 1;
-  }
-  .card-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding-top: 12px;
-    border-top: 1px solid var(--border);
-  }
-  .meta-pill {
-    font-size: 12px;
-    color: var(--text-muted);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2px 8px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-  .meta-pill svg { width: 12px; height: 12px; flex-shrink: 0; stroke: var(--text-subtle); }
-  .card-links {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    padding-top: 10px;
-  }
-  .card-link {
-    font-size: 12.5px;
-    font-weight: 500;
-    color: var(--accent-mid);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.15s, color 0.15s;
-  }
-  .card-link:hover { border-color: var(--accent-mid); color: var(--accent-dark); }
-  .card-link svg { width: 11px; height: 11px; stroke: currentColor; flex-shrink: 0; }
-  .card-link.disabled { color: var(--text-subtle); pointer-events: none; }
-  .card-image {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: var(--radius-sm);
-    background: var(--surface);
-    border: 1px solid var(--border);
-  }
-
-  /* ── TOGGLE TABS ────────────────────────── */
-  .view-toggle {
-    display: flex;
-    gap: 0;
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    width: fit-content;
-    margin-bottom: 28px;
-  }
-  .toggle-btn {
-    padding: 7px 18px;
-    font-size: 13.5px;
-    font-weight: 500;
-    background: var(--white);
-    color: var(--text-muted);
-    cursor: pointer;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.15s, color 0.15s;
-  }
-  .toggle-btn + .toggle-btn { border-left: 1px solid var(--border-strong); }
-  .toggle-btn.active { background: var(--accent); color: #fff; }
-  .toggle-btn svg { width: 14px; height: 14px; stroke: currentColor; }
+  /* ── (card styles removed — table-only index) ── */
 
   /* ── COMPARISON TABLE ───────────────────── */
   .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
@@ -331,7 +198,9 @@
     text-transform: uppercase;
     color: var(--text-muted);
     border-bottom: 1px solid var(--border-strong);
-    white-space: nowrap;
+    white-space: normal;
+    vertical-align: bottom;
+    line-height: 1.35;
   }
   table.comparison td {
     padding: 12px 14px;
@@ -451,6 +320,33 @@
     flex-direction: column;
     gap: 7px;
   }
+  /* Inline pipe-separated links in header */
+  .detail-header-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .detail-header-links .dhl-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-mid);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .detail-header-links .dhl-item:hover { color: var(--accent-dark); }
+  .detail-header-links .dhl-item svg { width: 13px; height: 13px; stroke: currentColor; flex-shrink: 0; }
+  .detail-header-links .dhl-item.disabled { color: var(--text-subtle); pointer-events: none; }
+  .detail-header-links .dhl-sep {
+    color: var(--border-strong);
+    padding: 0 8px;
+    font-size: 14px;
+    user-select: none;
+  }
   .detail-link {
     display: inline-flex;
     align-items: center;
@@ -472,6 +368,7 @@
     color: var(--text-muted);
     line-height: 1.75;
     margin-bottom: 14px;
+    text-align: justify;
   }
   .detail-content p:last-child { margin-bottom: 0; }
 
@@ -479,9 +376,11 @@
     .detail-body { grid-template-columns: 1fr; }
     .detail-meta { border-right: none; border-bottom: 1px solid var(--border); }
     .detail-img { width: 100%; height: 180px; }
-    .cards-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
   }
+
+  /* ── HIDDEN VIEWS ───────────────────────── */
+  .hidden { display: none !important; }
 
   /* ── QUESTIONNAIRES / DATA ───────────────── */
   .callout {
@@ -492,8 +391,9 @@
     padding: 18px 22px;
     margin-bottom: 16px;
   }
-  .callout p { font-size: 14.5px; color: var(--text-muted); line-height: 1.65; }
+  .callout p { font-size: 14.5px; color: var(--text-muted); line-height: 1.65; text-align: justify; }
   .callout a { color: var(--accent-mid); text-decoration: underline; text-underline-offset: 3px; }
+  .section-desc { font-size: 15px; color: var(--text-muted); max-width: 640px; margin-bottom: 36px; text-align: justify; }
 
   /* ── INSTITUTIONS ───────────────────────── */
   .institutions-grid {
@@ -588,255 +488,87 @@
     </div>
   </div>
 
-  <!-- TASK CARDS SECTION -->
+  <!-- TASK INDEX SECTION -->
   <section id="tasks">
     <div class="section-label">Behavioural Tasks</div>
     <h2 class="section-title">Index of Tasks</h2>
-    <p class="section-desc">Five validated open-source tasks covering different dimensions of movement imagery ability. Click any card to view full details.</p>
+    <p class="section-desc">Five validated open-source tasks covering different dimensions of movement imagery ability. Click on a task name to jump to its full description.</p>
 
-    <div class="view-toggle" role="group" aria-label="Switch view">
-      <button class="toggle-btn active" id="btn-cards" onclick="setView('cards')">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        Card View
-      </button>
-      <button class="toggle-btn" id="btn-table" onclick="setView('table')">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-        Table View
-      </button>
+    <!-- TABLE VIEW (only view) -->
+    <div class="table-wrap">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Type</th>
+            <th>Dimension(s)</th>
+            <th>Measure(s)</th>
+            <th>Imagery<br>Instruction</th>
+            <th>Exclusion<br>Criteria</th>
+            <th>Equipment</th>
+            <th>Duration</th>
+            <th>Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#detail-crft" style="color:var(--accent-mid);text-decoration:none;font-weight:500;">CRFT</a></td>
+            <td>Mental Chronometry</td>
+            <td><span class="tag">Manipulation</span><span class="tag">Maintenance</span></td>
+            <td>Deviation in difficulty–duration effects between execution and imagery</td>
+            <td>Explicit:<br>IVI + KIN</td>
+            <td>Task-related motor impairment (dominant hand)</td>
+            <td>Computer + touchscreen + stylus</td>
+            <td>10–15 min</td>
+            <td><a href="https://doi.org/10.31234/osf.io/c2mw6_v2" style="color:var(--accent-mid);" target="_blank">Czilczer et al. (preprint)</a></td>
+          </tr>
+          <tr>
+            <td><a href="#detail-ifst" style="color:var(--accent-mid);text-decoration:none;font-weight:500;">iFST</a></td>
+            <td>Mental Chronometry</td>
+            <td><span class="tag">Maintenance</span></td>
+            <td>Discrepancy between execution and imagery durations</td>
+            <td>Explicit:<br>IVI + KIN</td>
+            <td>Finger individuation impairment</td>
+            <td>Standard computer</td>
+            <td>10–15 min</td>
+            <td><a href="https://doi.org/10.3758/s13428-026-03002-3" style="color:var(--accent-mid);" target="_blank">Moreno-Verdú et al. (2026)</a></td>
+          </tr>
+          <tr>
+            <td><a href="#detail-hljt" style="color:var(--accent-mid);text-decoration:none;font-weight:500;">HLJT</a></td>
+            <td>Mental Rotation</td>
+            <td><span class="tag">Manipulation</span></td>
+            <td>Accuracy, Response time, Biomechanical constraints effect</td>
+            <td>Implicit:<br>IVI + KIN</td>
+            <td>Right-left disorientation</td>
+            <td>Standard computer</td>
+            <td>15–20 min</td>
+            <td><a href="https://doi.org/10.1016/j.neuroscience.2025.02.056" style="color:var(--accent-mid);" target="_blank">Moreno-Verdú et al. (2025)</a></td>
+          </tr>
+          <tr>
+            <td><a href="#detail-mbrt" style="color:var(--accent-mid);text-decoration:none;font-weight:500;">MBRT</a></td>
+            <td>Mental Rotation</td>
+            <td><span class="tag">Manipulation</span></td>
+            <td>Accuracy, Response times</td>
+            <td>Implicit:<br>IVI + KIN</td>
+            <td>Right-left disorientation</td>
+            <td>Standard computer</td>
+            <td>10 min</td>
+            <td><a href="https://doi.org/10.3390/brainsci12111500" style="color:var(--accent-mid);" target="_blank">Dahm et al. (2022)</a></td>
+          </tr>
+          <tr>
+            <td><a href="#detail-fpjt" style="color:var(--accent-mid);text-decoration:none;font-weight:500;">FPJT</a></td>
+            <td>Imagery–Stimulus Comparison</td>
+            <td><span class="tag">Manipulation</span><span class="tag">Maintenance</span><span class="tag gray">Generation</span><span class="tag gray">Inspection</span></td>
+            <td>Accuracy, Response time</td>
+            <td>Explicit:<br>IVI + KIN</td>
+            <td>Right-left disorientation; Hearing impairment</td>
+            <td>Computer + audio</td>
+            <td>20 min</td>
+            <td><a href="https://osf.io/preprints/psyarxiv/4sw6h_v1" style="color:var(--accent-mid);" target="_blank">Czilczer et al. (preprint)</a></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
-    <!-- CARD VIEW -->
-    <div class="view-cards cards-grid" id="view-cards">
-
-      <a href="#detail-crft" class="task-card">
-        <img src="images/dual-VRFT.png" alt="CRFT task illustration" class="card-image">
-        <div>
-          <div class="card-type-badge">Mental Chronometry</div>
-        </div>
-        <div>
-          <div class="card-title">Chronometric Radial Fitts' Task</div>
-          <div class="card-acronym">CRFT</div>
-        </div>
-        <div class="card-desc">Participants execute and imagine tapping between radially arranged targets. Assesses whether the difficulty–duration relationship from movement execution is preserved in imagery.</div>
-        <div class="card-meta">
-          <div class="meta-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            10–15 min
-          </div>
-          <div class="meta-pill">Manipulation · Maintenance</div>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/carlacz/CRFT" class="card-link" target="_blank" onclick="event.stopPropagation()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            Task Repo
-          </a>
-          <a href="https://doi.org/10.31234/osf.io/c2mw6_v2" class="card-link" target="_blank" onclick="event.stopPropagation()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Preprint
-          </a>
-          <span class="card-link disabled">Paper</span>
-        </div>
-      </a>
-
-      <a href="#detail-ifst" class="task-card">
-        <img src="images/fst.png" alt="iFST task illustration" class="card-image">
-        <div>
-          <div class="card-type-badge">Mental Chronometry</div>
-        </div>
-        <div>
-          <div class="card-title">Imagined Finger Sequence Task</div>
-          <div class="card-acronym">iFST</div>
-        </div>
-        <div class="card-desc">Participants type and imagine 8-digit finger sequences. The discrepancy between execution and imagery duration indicates how well temporal structure is maintained during imagery.</div>
-        <div class="card-meta">
-          <div class="meta-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            10–15 min
-          </div>
-          <div class="meta-pill">Maintenance</div>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/mmorenoverdu/iFST" class="card-link" target="_blank" onclick="event.stopPropagation()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            Task Repo
-          </a>
-          <a href="https://doi.org/10.1101/2025.10.20.683365" class="card-link" target="_blank" onclick="event.stopPropagation()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Preprint
-          </a>
-          <span class="card-link disabled">Paper</span>
-        </div>
-      </a>
-
-      <a href="#detail-hljt" class="task-card">
-        <img src="images/hljt.png" alt="HLJT task illustration" class="card-image">
-        <div>
-          <div class="card-type-badge">Mental Rotation</div>
-        </div>
-        <div>
-          <div class="card-title">Hand Laterality Judgement Task</div>
-          <div class="card-acronym">HLJT</div>
-        </div>
-        <div class="card-desc">Participants judge whether a rotated hand image presents a left or right hand. The biomechanical constraints effect indexes the extent to which motor imagery is deployed.</div>
-        <div class="card-meta">
-          <div class="meta-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            15–20 min
-          </div>
-          <div class="meta-pill">Manipulation</div>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/mmorenoverdu/HLJT" class="card-link" target="_blank" onclick="event.stopPropagation()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            Task Repo
-          </a>
-          <span class="card-link disabled">Preprint</span>
-          <a href="https://doi.org/10.1016/j.neuroscience.2025.02.056" class="card-link" target="_blank" onclick="event.stopPropagation()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Paper
-          </a>
-        </div>
-      </a>
-
-      <a href="#detail-mbrt" class="task-card">
-        <img src="images/mbrt.png" alt="MBRT task illustration" class="card-image">
-        <div>
-          <div class="card-type-badge">Mental Rotation</div>
-        </div>
-        <div>
-          <div class="card-title">Mental Body Rotation Task</div>
-          <div class="card-acronym">MBRT</div>
-        </div>
-        <div class="card-desc">Participants view rotated images of a human figure and judge whether the left or right limb is raised, requiring mental simulation of body orientation.</div>
-        <div class="card-meta">
-          <div class="meta-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            10 min
-          </div>
-          <div class="meta-pill">Manipulation</div>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/carlacz/MBRT" class="card-link" target="_blank" onclick="event.stopPropagation()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            Task Repo
-          </a>
-          <span class="card-link disabled">Preprint</span>
-          <a href="https://doi.org/10.3390/brainsci12111500" class="card-link" target="_blank" onclick="event.stopPropagation()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Paper
-          </a>
-        </div>
-      </a>
-
-      <a href="#detail-fpjt" class="task-card">
-        <img src="images/FPJT.png" alt="FPJT task illustration" class="card-image">
-        <div>
-          <div class="card-type-badge">Imagery–Stimulus Comparison</div>
-        </div>
-        <div>
-          <div class="card-title">Final Position Judgement Task</div>
-          <div class="card-acronym">FPJT</div>
-        </div>
-        <div class="card-desc">Participants imagine auditorily-instructed movement sequences and judge whether a displayed human figure matches their imagined final body position.</div>
-        <div class="card-meta">
-          <div class="meta-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            20 min
-          </div>
-          <div class="meta-pill">Generation · Manipulation · Maintenance · Inspection</div>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/carlacz/FPJT" class="card-link" target="_blank" onclick="event.stopPropagation()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            Task Repo
-          </a>
-          <a href="https://osf.io/preprints/psyarxiv/4sw6h_v1" class="card-link" target="_blank" onclick="event.stopPropagation()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Preprint
-          </a>
-          <span class="card-link disabled">Paper</span>
-        </div>
-      </a>
-
-    </div><!-- /view-cards -->
-
-    <!-- TABLE VIEW -->
-    <div class="view-table hidden" id="view-table">
-      <div class="table-wrap">
-        <table class="comparison">
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>Type</th>
-              <th>Dimension(s)</th>
-              <th>Measure(s)</th>
-              <th>Imagery Instruction</th>
-              <th>Exclusion Criteria</th>
-              <th>Equipment</th>
-              <th>Duration</th>
-              <th>Reference</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="#detail-crft" style="color:var(--accent-mid);text-decoration:none;font-weight:500;">CRFT</a></td>
-              <td>Mental Chronometry</td>
-              <td><span class="tag">Manipulation</span><span class="tag">Maintenance</span></td>
-              <td>Deviation in difficulty–duration effects between execution and imagery</td>
-              <td>Explicit: IVI + KIN</td>
-              <td>Task-related motor impairment (dominant hand)</td>
-              <td>Computer + touchscreen + stylus</td>
-              <td>10–15 min</td>
-              <td><a href="https://doi.org/10.31234/osf.io/c2mw6_v2" style="color:var(--accent-mid);" target="_blank">Czilczer et al. (preprint)</a></td>
-            </tr>
-            <tr>
-              <td><a href="#detail-ifst" style="color:var(--accent-mid);text-decoration:none;font-weight:500;">iFST</a></td>
-              <td>Mental Chronometry</td>
-              <td><span class="tag">Maintenance</span></td>
-              <td>Discrepancy between execution and imagery durations</td>
-              <td>Explicit: IVI + KIN</td>
-              <td>Finger individuation impairment</td>
-              <td>Standard computer</td>
-              <td>10–15 min</td>
-              <td><a href="https://doi.org/10.1101/2025.10.20.683365" style="color:var(--accent-mid);" target="_blank">Moreno-Verdú et al. (preprint)</a></td>
-            </tr>
-            <tr>
-              <td><a href="#detail-hljt" style="color:var(--accent-mid);text-decoration:none;font-weight:500;">HLJT</a></td>
-              <td>Mental Rotation</td>
-              <td><span class="tag">Manipulation</span></td>
-              <td>Accuracy, Response time, Biomechanical constraints effect</td>
-              <td>Implicit: IVI + KIN</td>
-              <td>Right-left disorientation</td>
-              <td>Standard computer</td>
-              <td>15–20 min</td>
-              <td><a href="https://doi.org/10.1016/j.neuroscience.2025.02.056" style="color:var(--accent-mid);" target="_blank">Moreno-Verdú et al. (2025)</a></td>
-            </tr>
-            <tr>
-              <td><a href="#detail-mbrt" style="color:var(--accent-mid);text-decoration:none;font-weight:500;">MBRT</a></td>
-              <td>Mental Rotation</td>
-              <td><span class="tag">Manipulation</span></td>
-              <td>Accuracy, Response times</td>
-              <td>Implicit: IVI + KIN</td>
-              <td>Right-left disorientation</td>
-              <td>Standard computer</td>
-              <td>10 min</td>
-              <td><a href="https://doi.org/10.3390/brainsci12111500" style="color:var(--accent-mid);" target="_blank">Dahm et al. (2022)</a></td>
-            </tr>
-            <tr>
-              <td><a href="#detail-fpjt" style="color:var(--accent-mid);text-decoration:none;font-weight:500;">FPJT</a></td>
-              <td>Imagery–Stimulus Comparison</td>
-              <td><span class="tag">Manipulation</span><span class="tag">Maintenance</span><span class="tag gray">Generation</span><span class="tag gray">Inspection</span></td>
-              <td>Accuracy, Response time</td>
-              <td>Explicit: IVI + KIN</td>
-              <td>Right-left disorientation; Hearing impairment</td>
-              <td>Computer + audio</td>
-              <td>20 min</td>
-              <td><a href="https://osf.io/preprints/psyarxiv/4sw6h_v1" style="color:var(--accent-mid);" target="_blank">Czilczer et al. (preprint)</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div><!-- /view-table -->
 
   </section>
 
@@ -852,8 +584,20 @@
         <div class="detail-header">
           <div class="detail-header-left">
             <div class="detail-header-badge">Mental Chronometry</div>
-            <h3>Chronometric Radial Fitts' Task</h3>
-            <div class="acronym">CRFT</div>
+            <h3>Chronometric Radial Fitts' Task <span style="font-family:'DM Sans',sans-serif;font-weight:400;font-size:16px;color:var(--text-subtle)">(CRFT)</span></h3>
+            <div class="detail-header-links">
+              <a href="https://github.com/carlacz/CRFT" class="dhl-item" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Task Repo
+              </a>
+              <span class="dhl-sep">|</span>
+              <a href="https://doi.org/10.31234/osf.io/c2mw6_v2" class="dhl-item" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Preprint
+              </a>
+              <span class="dhl-sep">|</span>
+              <span class="dhl-item disabled">Paper</span>
+            </div>
           </div>
           <img src="images/dual-VRFT.png" alt="CRFT illustration" class="detail-img">
         </div>
@@ -883,20 +627,6 @@
               <label>Duration</label>
               <p>10–15 min</p>
             </div>
-            <div class="meta-row">
-              <label>Links</label>
-              <div class="detail-links">
-                <a href="https://github.com/carlacz/CRFT" class="detail-link" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  Task Repo
-                </a>
-                <a href="https://doi.org/10.31234/osf.io/c2mw6_v2" class="detail-link" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  Preprint
-                </a>
-                <span class="detail-link disabled">Paper — not yet available</span>
-              </div>
-            </div>
           </div>
           <div class="detail-content">
             <p>The Chronometric Radial Fitts' Task (CRFT; Czilczer et al., preprint), adapted from the Virtual Radial Fitts' Task (e.g., Caeyenberghs et al., 2009), was developed to address limitations of using deviations from execution durations as an indicator of movement imagery ability. By incorporating Fitts' law (Fitts, 1954), it assesses the extent to which the lawful relationship between movement difficulty and duration is preserved in imagery relative to execution, thereby requiring participants to integrate movement constraints into their mental simulations.</p>
@@ -912,8 +642,20 @@
         <div class="detail-header">
           <div class="detail-header-left">
             <div class="detail-header-badge">Mental Chronometry</div>
-            <h3>Imagined Finger Sequence Task</h3>
-            <div class="acronym">iFST</div>
+            <h3>Imagined Finger Sequence Task <span style="font-family:'DM Sans',sans-serif;font-weight:400;font-size:16px;color:var(--text-subtle)">(iFST)</span></h3>
+            <div class="detail-header-links">
+              <a href="https://github.com/mmorenoverdu/iFST" class="dhl-item" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Task Repo
+              </a>
+              <span class="dhl-sep">|</span>
+              <span class="dhl-item disabled">Preprint</span>
+              <span class="dhl-sep">|</span>
+              <a href="https://doi.org/10.3758/s13428-026-03002-3" class="dhl-item" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Paper
+              </a>
+            </div>
           </div>
           <img src="images/fst.png" alt="iFST illustration" class="detail-img">
         </div>
@@ -943,24 +685,10 @@
               <label>Duration</label>
               <p>10–15 min</p>
             </div>
-            <div class="meta-row">
-              <label>Links</label>
-              <div class="detail-links">
-                <a href="https://github.com/mmorenoverdu/iFST" class="detail-link" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  Task Repo
-                </a>
-                <a href="https://doi.org/10.1101/2025.10.20.683365" class="detail-link" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  Preprint
-                </a>
-                <span class="detail-link disabled">Paper — not yet available</span>
-              </div>
-            </div>
           </div>
           <div class="detail-content">
             <p>The iFST is adapted from various sequence-learning paradigms frequently used to study motor control (Doyon et al. 1997). Participants are asked to type and imagine finger sequences, and the time employed is measured (Dahm et al. 2023). During imagery, participants must simulate pressing the keys until the sequence is completed, hence the paradigm assesses the ability to maintain movement imagery.</p>
-            <p>This version of the task, as developed by Moreno-Verdú et al. (preprint), consists of typing or imagining different 8-digit sequences with the index, middle, ring and little fingers of the dominant hand. The implementation employs two types of sequences that differ in complexity (based on the number of directional changes, with an equivalent number of digit repeats). This allows observation of sequence complexity effects on both execution and imagery times as a fundamental effect of the paradigm.</p>
+            <p>This version of the task, as developed by Moreno-Verdú et al. (2026), consists of typing or imagining different 8-digit sequences with the index, middle, ring and little fingers of the dominant hand. The implementation employs two types of sequences that differ in complexity (based on the number of directional changes, with an equivalent number of digit repeats). This allows observation of sequence complexity effects on both execution and imagery times as a fundamental effect of the paradigm.</p>
           </div>
         </div>
       </div>
@@ -972,8 +700,20 @@
         <div class="detail-header">
           <div class="detail-header-left">
             <div class="detail-header-badge">Mental Rotation</div>
-            <h3>Hand Laterality Judgement Task</h3>
-            <div class="acronym">HLJT</div>
+            <h3>Hand Laterality Judgement Task <span style="font-family:'DM Sans',sans-serif;font-weight:400;font-size:16px;color:var(--text-subtle)">(HLJT)</span></h3>
+            <div class="detail-header-links">
+              <a href="https://github.com/mmorenoverdu/HLJT" class="dhl-item" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Task Repo
+              </a>
+              <span class="dhl-sep">|</span>
+              <span class="dhl-item disabled">Preprint</span>
+              <span class="dhl-sep">|</span>
+              <a href="https://doi.org/10.1016/j.neuroscience.2025.02.056" class="dhl-item" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Paper
+              </a>
+            </div>
           </div>
           <img src="images/hljt.png" alt="HLJT illustration" class="detail-img">
         </div>
@@ -1003,20 +743,6 @@
               <label>Duration</label>
               <p>15–20 min</p>
             </div>
-            <div class="meta-row">
-              <label>Links</label>
-              <div class="detail-links">
-                <a href="https://github.com/mmorenoverdu/HLJT" class="detail-link" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  Task Repo
-                </a>
-                <span class="detail-link disabled">Preprint — not available</span>
-                <a href="https://doi.org/10.1016/j.neuroscience.2025.02.056" class="detail-link" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  Paper
-                </a>
-              </div>
-            </div>
           </div>
           <div class="detail-content">
             <p>The HLJT was first introduced by Cooper and Shepard (1975), who proposed that participants determine whether a visually presented hand is left or right by moving a mental "phantom" of one of their own hands into the portrayed position and then comparing its imagined appearance against that of the externally presented hand. Many variants of the task have subsequently been examined in the context of studies of motor imagery.</p>
@@ -1033,8 +759,20 @@
         <div class="detail-header">
           <div class="detail-header-left">
             <div class="detail-header-badge">Mental Rotation</div>
-            <h3>Mental Body Rotation Task</h3>
-            <div class="acronym">MBRT</div>
+            <h3>Mental Body Rotation Task <span style="font-family:'DM Sans',sans-serif;font-weight:400;font-size:16px;color:var(--text-subtle)">(MBRT)</span></h3>
+            <div class="detail-header-links">
+              <a href="https://github.com/carlacz/MBRT" class="dhl-item" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Task Repo
+              </a>
+              <span class="dhl-sep">|</span>
+              <span class="dhl-item disabled">Preprint</span>
+              <span class="dhl-sep">|</span>
+              <a href="https://doi.org/10.3390/brainsci12111500" class="dhl-item" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Paper
+              </a>
+            </div>
           </div>
           <img src="images/mbrt.png" alt="MBRT illustration" class="detail-img">
         </div>
@@ -1064,20 +802,6 @@
               <label>Duration</label>
               <p>10 min</p>
             </div>
-            <div class="meta-row">
-              <label>Links</label>
-              <div class="detail-links">
-                <a href="https://github.com/carlacz/MBRT" class="detail-link" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  Task Repo
-                </a>
-                <span class="detail-link disabled">Preprint — not available</span>
-                <a href="https://doi.org/10.3390/brainsci12111500" class="detail-link" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  Paper
-                </a>
-              </div>
-            </div>
           </div>
           <div class="detail-content">
             <p>The mental body rotation task is a cognitive test used to assess a person's ability to mentally simulate changes in body position (Steggemann et al., 2011). Participants are shown images of human figures in various orientations and are asked to judge whether the figure's left or right hand (or foot) is raised (Dahm et al., 2022). To do this correctly, they either mentally rotate their own body or the pictured figure in order to establish a perspective overlap.</p>
@@ -1094,8 +818,20 @@
         <div class="detail-header">
           <div class="detail-header-left">
             <div class="detail-header-badge">Imagery–Stimulus Comparison</div>
-            <h3>Final Position Judgement Task</h3>
-            <div class="acronym">FPJT</div>
+            <h3>Final Position Judgement Task <span style="font-family:'DM Sans',sans-serif;font-weight:400;font-size:16px;color:var(--text-subtle)">(FPJT)</span></h3>
+            <div class="detail-header-links">
+              <a href="https://github.com/carlacz/FPJT" class="dhl-item" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Task Repo
+              </a>
+              <span class="dhl-sep">|</span>
+              <a href="https://osf.io/preprints/psyarxiv/4sw6h_v1" class="dhl-item" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Preprint
+              </a>
+              <span class="dhl-sep">|</span>
+              <span class="dhl-item disabled">Paper</span>
+            </div>
           </div>
           <img src="images/FPJT.png" alt="FPJT illustration" class="detail-img">
         </div>
@@ -1128,20 +864,6 @@
               <label>Duration</label>
               <p>20 min</p>
             </div>
-            <div class="meta-row">
-              <label>Links</label>
-              <div class="detail-links">
-                <a href="https://github.com/carlacz/FPJT" class="detail-link" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                  Task Repo
-                </a>
-                <a href="https://osf.io/preprints/psyarxiv/4sw6h_v1" class="detail-link" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  Preprint
-                </a>
-                <span class="detail-link disabled">Paper — not yet available</span>
-              </div>
-            </div>
           </div>
           <div class="detail-content">
             <p>In the Final Position Judgement Task (FPJT), participants imagine executing a sequence of auditorily instructed movements and then judge whether the image of a human figure matches their imagined final position. The FPJT adapts earlier tasks involving final position judgements (e.g., Madan & Singhal, 2013; Naito, 1994; Schott, 2013).</p>
@@ -1159,7 +881,13 @@
     <h2 class="section-title">Questionnaires for Movement Imagery</h2>
     <p class="section-desc">The primary focus of this platform is on behavioural tasks. However, self-report questionnaires have been widely used in research and applied contexts to assess imagery generation ability.</p>
     <div class="callout">
-      <p>A dedicated repository for movement imagery questionnaires — including scoring guidelines and translations — is available at <a href="https://github.com/mmorenoverdu/movement_imagery_questionnaires" target="_blank">github.com/mmorenoverdu/movement_imagery_questionnaires</a>.</p>
+      <p>A dedicated repository for movement imagery questionnaires — including scoring guidelines and translations — is available below. If you are interested in using questionnaires alongside the behavioural tasks provided here, please refer to this resource.</p>
+    </div>
+    <div style="margin-top: 14px;">
+      <a href="https://github.com/mmorenoverdu/movement_imagery_questionnaires" target="_blank" class="dhl-item" style="font-size:14px; font-weight:500; color:var(--accent-mid); text-decoration:none; display:inline-flex; align-items:center; gap:7px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        Questionnaire Repository
+      </a>
     </div>
   </section>
 
@@ -1218,23 +946,7 @@
 </footer>
 
 <script>
-  function setView(v) {
-    const cards = document.getElementById('view-cards');
-    const table = document.getElementById('view-table');
-    const btnC = document.getElementById('btn-cards');
-    const btnT = document.getElementById('btn-table');
-    if (v === 'cards') {
-      cards.classList.remove('hidden');
-      table.classList.add('hidden');
-      btnC.classList.add('active');
-      btnT.classList.remove('active');
-    } else {
-      table.classList.remove('hidden');
-      cards.classList.add('hidden');
-      btnT.classList.add('active');
-      btnC.classList.remove('active');
-    }
-  }
+  /* No toggle JS needed — index is table-only */
 </script>
 
 </body>
