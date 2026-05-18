@@ -321,33 +321,42 @@
     flex-direction: column;
     gap: 7px;
   }
-  /* Inline pipe-separated links in header */
+  /* Inline pill-button links in detail header */
   .detail-header-links {
     display: flex;
     align-items: center;
-    gap: 0;
+    gap: 8px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 14px;
   }
   .detail-header-links .dhl-item {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    font-size: 13px;
+    gap: 6px;
+    font-size: 12.5px;
     font-weight: 500;
-    color: var(--accent-mid);
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid #b5ddd5;
+    border-radius: 5px;
+    padding: 5px 12px;
     text-decoration: none;
-    transition: color 0.15s;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    white-space: nowrap;
   }
-  .detail-header-links .dhl-item:hover { color: var(--accent-dark); }
+  .detail-header-links .dhl-item:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
   .detail-header-links .dhl-item svg { width: 13px; height: 13px; stroke: currentColor; flex-shrink: 0; }
-  .detail-header-links .dhl-item.disabled { color: var(--text-subtle); pointer-events: none; }
-  .detail-header-links .dhl-sep {
-    color: var(--border-strong);
-    padding: 0 8px;
-    font-size: 14px;
-    user-select: none;
+  .detail-header-links .dhl-item.disabled {
+    color: var(--text-subtle);
+    background: #f1f0eb;
+    border-color: #ddddd8;
+    pointer-events: none;
   }
+  .detail-header-links .dhl-sep { display: none; }
   .detail-link {
     display: inline-flex;
     align-items: center;
@@ -465,6 +474,8 @@
       <li><a href="#tasks">Tasks</a></li>
       <li><a href="#task-details">Task Details</a></li>
       <li><a href="#questionnaires">Questionnaires</a></li>
+      <li><a href="#contribute">Contribute</a></li>
+      <li><a href="#cite">Cite</a></li>
       <li><a href="#about">About</a></li>
     </ul>
   </div>
@@ -898,12 +909,63 @@
   </section>
 
   <!-- DATA SUBMISSION -->
-  <section>
+  <section id="contribute">
     <div class="section-label">Community</div>
     <h2 class="section-title">Contribute Normative Data</h2>
     <p class="section-desc">We aim to establish normative data to support interpretation of individual task scores and inform clinical applications of movement imagery practice.</p>
     <div class="callout">
       <p>Contributions from researchers and practitioners who have used any of the experiment files are greatly appreciated. To contribute, please email the corresponding author at <a href="mailto:Carla.Czilczer@uibk.ac.at">Carla.Czilczer@uibk.ac.at</a> with the attached data, including any relevant details about your sample (e.g., specific clinical populations).</p>
+    </div>
+  </section>
+
+  <!-- HOW TO CITE -->
+  <section id="cite">
+    <div class="section-label">Attribution</div>
+    <h2 class="section-title">How to Cite</h2>
+    <p class="section-desc">If you use the MIAT Platform or any of its tasks in your research, please cite the platform preprint as well as the relevant task-specific reference(s) listed below.</p>
+
+    <div class="callout" style="margin-bottom: 16px;">
+      <p style="margin-bottom: 8px; font-weight: 500; color: var(--text); font-size: 14px;">Platform reference</p>
+      <p>Czilczer, C., Moreno-Verdú, M., Dahm, S. F., &amp; Hardwick, R. M. (preprint). The Movement Imagery Ability Task (MIAT) Platform: An open-science resource for standardised assessment of movement imagery ability. <em>OSF Preprints.</em> <a href="https://doi.org/10.31234/osf.io/9xjfb_v1" target="_blank">https://doi.org/10.31234/osf.io/9xjfb_v1</a></p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Reference</th>
+            <th>DOI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CRFT</td>
+            <td>Czilczer, C., Moreno-Verdú, M., Dahm, S. F., &amp; Hardwick, R. M. (preprint). The Chronometric Radial Fitts' Task (CRFT). <em>OSF Preprints.</em></td>
+            <td><a href="https://doi.org/10.31234/osf.io/c2mw6_v2" style="color:var(--accent-mid);" target="_blank">10.31234/osf.io/c2mw6_v2</a></td>
+          </tr>
+          <tr>
+            <td>iFST</td>
+            <td>Moreno-Verdú, M., Czilczer, C., Dahm, S. F., &amp; Hardwick, R. M. (2026). The Imagined Finger Sequence Task (iFST). <em>Behavior Research Methods.</em></td>
+            <td><a href="https://doi.org/10.3758/s13428-026-03002-3" style="color:var(--accent-mid);" target="_blank">10.3758/s13428-026-03002-3</a></td>
+          </tr>
+          <tr>
+            <td>HLJT</td>
+            <td>Moreno-Verdú, M., Czilczer, C., Dahm, S. F., &amp; Hardwick, R. M. (2025). The Hand Laterality Judgement Task (HLJT). <em>Neuroscience.</em></td>
+            <td><a href="https://doi.org/10.1016/j.neuroscience.2025.02.056" style="color:var(--accent-mid);" target="_blank">10.1016/j.neuroscience.2025.02.056</a></td>
+          </tr>
+          <tr>
+            <td>MBRT</td>
+            <td>Dahm, S. F., et al. (2022). The Mental Body Rotation Task (MBRT). <em>Brain Sciences.</em></td>
+            <td><a href="https://doi.org/10.3390/brainsci12111500" style="color:var(--accent-mid);" target="_blank">10.3390/brainsci12111500</a></td>
+          </tr>
+          <tr>
+            <td>FPJT</td>
+            <td>Czilczer, C., Moreno-Verdú, M., Dahm, S. F., &amp; Hardwick, R. M. (preprint). The Final Position Judgement Task (FPJT). <em>PsyArXiv.</em></td>
+            <td><a href="https://osf.io/preprints/psyarxiv/4sw6h_v1" style="color:var(--accent-mid);" target="_blank">osf.io/preprints/psyarxiv/4sw6h_v1</a></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
