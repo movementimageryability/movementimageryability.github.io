@@ -132,6 +132,33 @@
     gap: 12px;
     flex-wrap: wrap;
   }
+  .hero-cite {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    max-width: 680px;
+  }
+  .hero-cite em { font-style: italic; }
+  .hero-cite a { color: var(--accent-mid); text-decoration: underline; text-underline-offset: 3px; }
+  .hero-cite-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .hero-cite-sep {
+    margin: 0 6px;
+    color: var(--border-strong);
+  }
   .btn {
     display: inline-flex;
     align-items: center;
@@ -496,6 +523,14 @@
       <a href="#tasks" class="btn btn-outline">
         Browse Tasks ↓
       </a>
+    </div>
+
+    <div class="hero-cite">
+      <span class="hero-cite-label">How to cite:</span>
+      Czilczer, C., Moreno-Verdú, M., Dahm, S. F., &amp; Hardwick, R. M. (preprint). The Movement Imagery Ability Task (MIAT) Platform: An open-science resource for standardised assessment of movement imagery ability. <em>OSF Preprints.</em>
+      <a href="https://doi.org/10.31234/osf.io/9xjfb_v1" target="_blank">https://doi.org/10.31234/osf.io/9xjfb_v1</a>
+      <span class="hero-cite-sep">·</span>
+      Once published: manuscript reference and DOI will be added here.
     </div>
   </div>
 
