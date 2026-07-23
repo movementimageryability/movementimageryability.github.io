@@ -1,6 +1,6 @@
 > ## How to use this template — delete this box before publishing
 >
-> - This template is already formatted in Markdown. Complete it and save or rename the file as `README.md`; If you use GitHub, it will then display the headings, tables, and lists in the intended format. See also example repository in case something is unclear (https://github.com/carlacz/MBRT/PsychoPy-local).
+> - This template is already formatted in Markdown. Download it (click on the 3 dots next to the search bar on the right; just above the file), complete it and save or rename the file as `README.md`; If you add it to your GitHub repository, it will then display the headings, tables, and lists in the intended format. See also example repository in case something is unclear (https://github.com/carlacz/MBRT/PsychoPy-local).
 > - Text in [square brackets] should be **replaced** with information about the task.
 > - Text beginning with [If applicable: ...] should be completed **when relevant** and otherwise deleted.
 > - Guidance in highlighted block quotes ("Guidance — delete before publishing: ...") should be **deleted before** publishing.
