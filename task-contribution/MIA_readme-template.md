@@ -12,7 +12,7 @@
 
 Available in **[language(s)]**.
 
-The **[full task name] ([task abbreviation])** is a behavioural paradigm designed to assess [movement imagery ability or process]. [Briefly explain what participants do and which outcomes are measured.] If you are interested in assessing broader movement imagery ability, visit the **Movement Imagery Ability Task Platform** (https://movementimageryability.github.io/) for an overview of open-source behavioural tasks.
+The **[full task name] ([task abbreviation])** is a behavioural paradigm designed to assess [movement imagery ability or process]. [Briefly explain what participants do and which outcomes are measured.] If you are interested in assessing broader movement imagery ability, visit the **Movement Imagery Ability Platform** (https://movementimageryability.github.io/) for an overview of open-source behavioural tasks.
 
 [Briefly describe the theoretical or empirical background of the task and cite the original, adapted, or validation studies.]
 
